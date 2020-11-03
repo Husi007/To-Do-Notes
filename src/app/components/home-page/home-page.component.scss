@@ -1,0 +1,80 @@
+$gray: gray;
+.content {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  div {
+    width: 45vw;
+  }
+}
+
+.todo-container {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.todo-list {
+  border: solid 1px $gray;
+  min-height: 70px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+
+.todo-box {
+  padding: 20px 10px;
+  border-bottom: solid 1px $gray;
+  color: rgba(0, 0, 0, 3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: white;
+  font-size: 14px;
+  height: 70px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 2), 0 8px 10px 1px rgba(0, 0, 0, 1), 0 3px 14px 2px rgba(0, 0, 0, 6);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.todo-box:last-child {
+  border: none;
+}
+
+.todo-list.cdk-drop-list-dragging .todo-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.col-md-3#carr {
+  box-shadow: 1px 0 9px 11px #CCC;
+}
+
+mat-card {
+  max-height: 400px !important;
+  min-height: 400px!important;
+}
+
+.shadow-box{
+  box-shadow: 1px 0 9px 11px #CCC;
+}

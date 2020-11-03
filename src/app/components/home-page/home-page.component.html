@@ -1,0 +1,50 @@
+<button class="btn btn-lg btn-success mt-2 float-right mr-3" (click)="buttonToggle()"
+  *ngIf="addImagesToggle">Done</button>
+<button class="btn btn-lg btn-success mt-2 float-right mr-3" (click)="buttonToggle()" *ngIf="!addImagesToggle">Add
+  Media/Images</button>
+<div class="mt-2 mb-5 container">
+  <div class="container">
+    <h4 class="center mb-2 mt-2">To-Do Tasks</h4>
+    <div cdkDropList id="todoList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="['doneList']"
+      (cdkDropListDropped)="drop($event)" class="todo-list">
+      <div class="col-md-3 m-4 mt-4 float-left shadow-box" cdkDrag *ngFor="let item of todo; let i = index"
+        [cdkDragDisabled]="!addImagesToggle">{{item.value}}
+        <mat-card id="{{item.id}}">
+          <mat-card-header class="mb-2">
+            <div mat-card-avatar class="example-header-image"
+              [ngStyle]="{'background-image': 'url(' + item.imageURl + ')'}"></div>
+            <mat-card-title>
+              <h4>Task - {{item.id}}</h4>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{item.imageURl}}" alt="{{item.imageAlt}}" [ngbTooltip]="item.imageAlt">
+          <mat-card-content>
+            <p> {{item.description}} </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2 container" *ngIf="addImagesToggle">
+    <h3 class="center mb-2">Drag and Drop Here</h3>
+    <div cdkDropList id="doneList" [cdkDropListData]="done" [cdkDropListConnectedTo]="['todoList']" class="todo-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="col-md-3 m-4 mt-4 float-left shadow-box" cdkDrag *ngFor="let item of done; let i = index">
+        {{item.value}}
+        <mat-card id="{{item.id}}">
+          <mat-card-header class="mb-2">
+            <div mat-card-avatar class="example-header-image"
+              [ngStyle]="{'background-image': 'url(' + item.imageURl + ')'}"></div>
+            <mat-card-title>
+              <h4>Task - {{item.id}}</h4>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{item.imageURl}}" alt="{{item.imageAlt}}" [ngbTooltip]="item.imageAlt">
+          <mat-card-content>
+            <p> {{item.description}} </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

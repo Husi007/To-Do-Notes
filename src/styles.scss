@@ -1,0 +1,36 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  font-family: "Monospace", sans-serif;
+  margin: 0;
+  background: #dee2e6;
+  cursor: -webkit-grabbing; cursor: grabbing;
+}
+
+form {
+  mat-form-field {
+    width: 95vw;
+    margin: 0 auto;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.btn-delete-user {
+  width: 50px;
+  text-align: center;
+  box-sizing: content-box;
+}
+
+#content {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.content {
+  align-items: flex-start;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
